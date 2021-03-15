@@ -43,6 +43,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductDTO update(ProductDTO product) {
+        return productMapper.toProductDTO(productoRepository.save(productMapper.toProducto(product)));
+    }
+
+    @Override
     public boolean delete(int idProduct) {
         productoRepository.deleteById(idProduct);
         return productoRepository.findById(idProduct).isEmpty();

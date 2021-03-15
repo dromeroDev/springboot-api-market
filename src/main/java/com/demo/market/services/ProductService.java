@@ -11,5 +11,6 @@ public interface ProductService {
     Optional<List<ProductDTO>> getScarseProducts(int quantity);
     Optional<ProductDTO> getProduct(int idProduct);
     ProductDTO save(ProductDTO product);
+    ProductDTO update(ProductDTO product);
     boolean delete(int idProduct);
 }
